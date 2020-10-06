@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+class Cale {
+    int a;  // 변수 선언
+    int b;
+public:
+    static int count;
+    Cale(int q= 0, int w= 0) : a(q), b(w) {   // 갯수 세기 (멤버 초기화 리스트)
+        count++;
+    }
+};
+
+int Cale::count = 0;  // 전적 변수 초기화
+
+int main()
+{
+    cout << "배당 된 숫자 횟 수 = " << Cale::count << endl;
+
+    Cale c1(100, 241);
+    Cale c2(341, 34);
+    cout << "배당 된 숫자 횟 수 = " << Cale::count << endl;
+
+    Cale c3(34, 26);
+    cout << "배당 된 숫자 횟 수 = " << c1.count << endl;
+    cout << "배당 된 숫자 횟 수 = " << c2.count << endl;
+}
